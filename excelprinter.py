@@ -75,4 +75,4 @@ class ExcelPrinter:
 
     @staticmethod
     def sort_games(bundle_info: BundleInfo):
-        bundle_info.games.sort(key=lambda x: x.total_reviews if x.total_reviews else 0, reverse=True)
+        bundle_info.games.sort(key=lambda x: (x.total_reviews, x.total_positive / x.total_reviews) if x.total_reviews else (0, 0), reverse=True)
