@@ -4,10 +4,6 @@ import requests
 
 
 class SteamIdNameGetter:
-    FOLDER_NAME = 'cache'
-    FILE_NAME = 'steamidnames.json'
-    PATH_NAME = f'{FOLDER_NAME}/{FILE_NAME}'
-
     class SteamIdNotFoundException(Exception):
         pass
 

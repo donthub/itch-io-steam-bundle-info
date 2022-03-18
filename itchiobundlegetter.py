@@ -16,7 +16,7 @@ class ItchIoBundleGetter:
 
     def get_bundle(self) -> BundleInfo:
         url_or_id = enterbox('Please enter Itch.io bundle URL or ID:')
-        pattern = re.compile(r'^https://itch\.io/b/(\d+)/(.*)$|^(\d+)$')
+        pattern = re.compile(r'^https://itch\.io/b/(\d+)/.*$|^(\d+)$')
         match = pattern.match(url_or_id)
         if not match:
             self.logger.error('Provided Itch.io bundle URL or ID is invalid!')
