@@ -21,7 +21,7 @@ class ItchIoBundleGetter:
         if not match:
             self.logger.error('Provided Itch.io bundle URL or ID is invalid!')
             raise self.InvalidItchIoBundleException()
-        id = match.group()
+        id = next(obj for obj in match.groups() if obj)
 
         self.logger.info('Retrieving bundle information from Itch.io')
         response = requests.get(f'https://itch.io/bundle/{id}/games.json')
